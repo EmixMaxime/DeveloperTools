@@ -50,6 +50,7 @@ gulp.task('js', function() {
 
 gulp.task('html', function() {
 	return gulp.src(path.html + '*.jade')
+        .pipe($.plumber())
 		.pipe($.jade({
 				pretty: true
 			})).on('error', gutil.log)
