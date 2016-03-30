@@ -13,10 +13,10 @@ var browsers = [
 
 // Configurations
 var path = {
-	css: 'css/',
-	scss: 'sass/',
-	js: 'js/',
-	html: 'templates/',
+	css: './css/',
+	scss: './sass/',
+	js: './js/',
+	html: './templates/',
 	htmlDest : '',
 };
 
