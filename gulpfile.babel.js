@@ -35,6 +35,7 @@ gulp.task('default', ['browser-sync'], function() {
         // gulp.watch(`${config.path.sass}'*.scss`, ['sass']);
         gulp.watch(config.path.sass + '*.scss', ['sass']);
         gulp.watch(config.path.ts + '*ts', ['typescript:watch']);
+        gulp.watch(config.path.jsEs6 + '*.js', ['javascript:watch'])
         // gulp.watch(path.html + '*.jade', ['html']);
     } else {
         // runSequence('deployment');

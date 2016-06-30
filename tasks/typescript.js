@@ -3,14 +3,14 @@ import source from 'vinyl-source-stream'
 import buffer from 'vinyl-buffer'
 import tsify from 'tsify'
 import babelify from 'babelify'
-import ts from 'gulp-typescript'
+// import ts from 'gulp-typescript'
 
 const tsConfig = require('../tsconfig.json') // Configuration file
  
 let bundleStream = function() {
   return browserify()
     .add([
-      'src/main.ts'
+      'src/typescript/main.ts'
     ])
     .plugin(tsify, { target: 'es6' })
     .transform(babelify)

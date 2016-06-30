@@ -2,8 +2,9 @@
 var path = {
     sassOutDir: './public/css/',
     sass: './sass/**/',
-    js: 'js/',
-    jsDest: './public/js/',
+
+    jsEs6: './src/es6/',
+    jsOutDir: './public/js/',
 
     html: 'templates/**/',
     htmlOutDir : 'public/',

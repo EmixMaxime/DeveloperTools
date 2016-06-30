@@ -1,7 +1,7 @@
 {
     "files": [
-        "src/main.ts",
-        "src/typings/scrollto.d.ts",
-        "src/greet.ts"        
+        "src/typescript/main.ts",
+        "src/typescript/typings/scrollto.d.ts",
+        "src/typescript/greet.ts"        
     ]
 }
