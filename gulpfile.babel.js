@@ -25,16 +25,12 @@ gulp.task('test', function () {
             .send()
 })
 
-gulp.task('e', function () {
-    console.log()
-})
-
-gulp.task('default', ['browser-sync'], function() {
+gulp.task('default', ['browser-sync'], function () {
     if(config.env.mode !== 'deployment') {
         // gulp.watch(path.data + '*.yml', ['html']);
         // gulp.watch(`${config.path.sass}'*.scss`, ['sass']);
         gulp.watch(config.path.sass + '*.scss', ['sass']);
-        gulp.watch(config.path.ts + '*ts', ['typescript:watch']);
+        //gulp.watch(config.path.ts + '*ts', ['typescript:watch']);
         gulp.watch(config.path.jsEs6 + '*.js', ['javascript:watch'])
         // gulp.watch(path.html + '*.jade', ['html']);
     } else {
@@ -42,8 +38,4 @@ gulp.task('default', ['browser-sync'], function() {
         // $.util.log("Les tâches pour préparer l'application au déploiement ont étaient effectué");
         // $.util.log("Minification du css et js");
     }
-})
-
-gulp.task('default', function () {
-    gulp.watch(config.path.html + '*.jade', ['html'])
 })
