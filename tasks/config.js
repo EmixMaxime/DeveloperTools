@@ -1,5 +1,5 @@
-// Configurations
-var path = {
+// Configurations paths
+const path = {
     sassOutDir: './public/css/',
     sass: './sass/**/',
 
@@ -18,13 +18,20 @@ var path = {
     tsOutDir: './public/js'
 }
 
-var browsers = [
+const general = {
+    forceReload: [
+        './public/index.html'
+    ]
+}
+
+// Autoprefixing css
+const browsers = [
     'last 2 versions'
 ]
 
 
-var env = {
+const env = {
     mode: 'dev'
 }
 
-export default {path, env, browsers}
+export default {path, env, browsers, general}

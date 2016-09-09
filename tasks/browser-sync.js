@@ -1,4 +1,5 @@
 import gulp from 'gulp'
+import config from './config'
 require('./sass')
 
 const serverOptions = { // List of interesting options
@@ -22,7 +23,9 @@ gulp.task('browser-sync', ['sass'], function() {
         server: serverOptions.directory,
         
     })
-    //gulp.watch('public/*.html').on('change', browserSync.reload);
+    config.general.forceReload.forEach( item => {
+        gulp.watch(item).on('change', browserSync.reload);
+    })
     gulp.watch('./public/js/*.js').on('change', browserSync.reload);
     gulp.watch(config.path.sass + "*.scss", ['sass']);
 })
