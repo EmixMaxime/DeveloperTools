@@ -17,6 +17,11 @@ const path = {
     typescriptWatcher: './src/typescript/*.ts',
 }
 
+// All posibility : https://github.com/sass/node-sass#options
+const libSass = {
+    includePaths: [],
+}
+
 const general = {
     activeLoaders: {
         typescript: false,
@@ -27,7 +32,7 @@ const general = {
     forceReload: [
         './public/index.html',
         './public/js/*.js'
-    ]
+    ],
 }
 
 // Autoprefixing css
@@ -40,4 +45,4 @@ const env = {
     mode: 'dev'
 }
 
-export default {path, env, browsers, general}
+export default {path, env, browsers, general, libSass}

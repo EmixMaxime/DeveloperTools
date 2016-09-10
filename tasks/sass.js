@@ -13,7 +13,7 @@ gulp.task('minify-css', function () {
 
 gulp.task('sass', function (){
     return gulp.src(config.path.scssWatcher)
-        .pipe($.sass().on('error', $.sass.logError))
+        .pipe($.sass(config.libSass).on('error', $.sass.logError))
         .pipe( $.if(config.env.mode == 'deployment', $.autoprefixer(config.browsers)) )
         .pipe(gulp.dest(config.path.cssOutDir))
         .pipe(browserSync.stream()) // !!!!!!
