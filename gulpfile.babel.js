@@ -26,7 +26,7 @@ gulp.task('dev', ['browser-sync'], function () {
                 .action(`Watchers ${loader} launched at `)
                 .data(`${config.path[loader + 'Watcher']}`)
                 .send()
-            gulp.watch(config.path[loader] + `*.${loader}`, [taskNameForLoader[loader]])
+            gulp.watch(config.path[loader + 'Watcher'], [taskNameForLoader[loader]])
         }
     }
 })
