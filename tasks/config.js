@@ -1,26 +1,32 @@
 // Configurations paths
 const path = {
-    sassOutDir: './public/css/',
-    sass: './sass/**/',
+    cssOutDir: './public/css/',
+    scssWatcher: './sass/**/*.scss',
 
-    jsEs6: './src/es6/',
     jsOutDir: './public/js/',
+    jsEs6Watcher: './src/es6/*.js',
 
-    html: 'templates/**/',
     htmlOutDir : 'public/',
+    pugWatcher: './templates/**/*.pug',
     injectData: true,
     dataFormat: 'yaml',
     dataFile: 'templates/data.yml',
 
     data: 'templates/',
 
-    ts: './src/',
-    tsOutDir: './public/js'
+    typescriptWatcher: './src/typescript/*.ts',
 }
 
 const general = {
+    activeLoaders: {
+        typescript: false,
+        scss: true,
+        jsEs6: true,
+        pug: true,
+    },
     forceReload: [
-        './public/index.html'
+        './public/index.html',
+        './public/js/*.js'
     ]
 }
 

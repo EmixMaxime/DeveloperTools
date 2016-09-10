@@ -11,6 +11,10 @@ const serverOptions = { // List of interesting options
     // host: '192.168.1.30' // Is optional, but it fixed bug on my raspberryPi
 }
 
+browserSync.use(require("bs-html-injector"), {
+    files: ['*.html']
+});
+
 /* https://www.browsersync.io/docs/gulp#gulp-sass-css */
 
 /* For HTML & JS : https://www.browsersync.io/docs/gulp#gulp-reload */

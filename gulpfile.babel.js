@@ -1,5 +1,6 @@
 import gulp from 'gulp'
 import config from './tasks/config'
+import taskNameForLoader from './tasks/mapLoaders'
 import log from 'gutil-waterlog'
 import loader from 'gulp-load-plugins'
 
@@ -17,25 +18,15 @@ global.browserSync = browserSync
 import requireDir from 'require-dir'
 requireDir('./tasks') // Require all of files into the folder
 
-gulp.task('test', function () {
-    log.time('task');
-    log.task('example') // 'example is the plugin\group name' 
-            .action('Building JS...')
-            .hr()
-            .send()
-})
-
-gulp.task('default', ['browser-sync'], function () {
-    if(config.env.mode !== 'deployment') {
-        // gulp.watch(path.data + '*.yml', ['html']);
-        // gulp.watch(`${config.path.sass}'*.scss`, ['sass']);
-        gulp.watch(config.path.sass + '*.scss', ['sass']);
-        //gulp.watch(config.path.ts + '*ts', ['typescript:watch']);
-        gulp.watch(config.path.jsEs6 + '*.js', ['javascript:watch'])
-        // gulp.watch(path.html + '*.jade', ['html']);
-    } else {
-        // runSequence('deployment');
-        // $.util.log("Les tâches pour préparer l'application au déploiement ont étaient effectué");
-        // $.util.log("Minification du css et js");
+gulp.task('dev', ['browser-sync'], function () {
+    for (let loader in config.general.activeLoaders) {
+        if (config.general.activeLoaders[loader] === true) {
+            log.time('GULP')
+            log.success('GULP')
+                .action(`Watchers ${loader} launched at `)
+                .data(`${config.path[loader + 'Watcher']}`)
+                .send()
+            gulp.watch(config.path[loader] + `*.${loader}`, [taskNameForLoader[loader]])
+        }
     }
 })

@@ -10,18 +10,18 @@ let startLog = function (name, action, fileName) {
         .send()
 }
 
-let stopLog = function (etat, name) {
+const stopLog = function (etat, name) {
     log.error(name)
         .time(log.timeEnd(name))
 }
 
-gulp.task('html', function() {
-    return gulp.src(config.path.html + '*.jade')
-        .pipe($.data(function () {
-            if (config.path.injectData && config.path.dataFormat === 'yaml') {
-                startLog('HTML:BUILD', 'Injecting data', config.path.dataFile)
+gulp.task('pug', () => {
+    return gulp.src(config.path.pugWatcher)
+        .pipe($.data( () => {
+            if (config.path.injectData === true && config.path.dataFormat === 'yaml') {
+                startLog('HTML:BUILD', 'Injecting data from ', config.path.dataFile)
                 try {
-                    let content = fs.readFileSync(config.path.dataFile, 'utf8')
+                    const content = fs.readFileSync(config.path.dataFile, 'utf8')
                     return yaml.load(content)
                 } catch (err) {
                     console.log(err)
