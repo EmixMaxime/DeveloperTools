@@ -1,0 +1,11 @@
+{
+    "parser": "babel-eslint",
+    "extends": "standard",
+    "env": {
+        "browser": true
+    },
+    "rules": {
+        "no-console": "off",
+        "indent": "off"
+    }
+}

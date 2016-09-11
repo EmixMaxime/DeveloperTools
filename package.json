@@ -3,20 +3,36 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "scripts": {
+    "dev": "gulp dev",
+    "build": "gulp build"
+  },
+  "author": "EmixMaxime <emixmaxime@outlook.fr>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/EmixMaxime/Front-end-boilerplate-with-gulp.git"
+  },
   "dependencies": {
     "scroll-to": "0.0.2"
   },
   "devDependencies": {
     "babel-core": "^6.10.4",
+    "babel-eslint": "^6.1.2",
     "babel-preset-es2015": "^6.9.0",
     "babelify": "^7.3.0",
     "browser-sync": "^2.13.0",
     "browserify": "^13.0.1",
     "bs-html-injector": "^3.0.3",
+    "eslint-config-standard": "^6.0.0",
+    "eslint-friendly-formatter": "^2.0.6",
+    "eslint-plugin-promise": "^2.0.1",
+    "eslint-plugin-standard": "^2.0.0",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-clean-css": "^2.0.10",
     "gulp-data": "^1.2.1",
+    "gulp-eslint": "^3.0.1",
     "gulp-if": "^2.0.1",
     "gulp-jade": "^1.1.0",
     "gulp-load-plugins": "^1.2.4",
@@ -28,11 +44,5 @@
     "tsify": "^0.16.0",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"
-  },
-  "scripts": {
-    "dev": "gulp dev",
-    "build": "gulp build"
-  },
-  "author": "",
-  "license": "ISC"
+  }
 }

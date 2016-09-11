@@ -30,3 +30,7 @@ gulp.task('dev', ['browser-sync'], function () {
         }
     }
 })
+
+gulp.task('build', ['javascript:build'], () => {
+    
+})

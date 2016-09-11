@@ -31,7 +31,6 @@ const general = {
     },
     forceReload: [
         './public/index.html',
-        './public/js/*.js'
     ],
 }
 
