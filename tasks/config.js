@@ -8,11 +8,6 @@ const path = {
 
     htmlOutDir : 'public/',
     pugWatcher: './templates/**/*.pug',
-    injectData: true,
-    dataFormat: 'yaml',
-    dataFile: 'templates/data.yml',
-
-    data: 'templates/',
 
     typescriptWatcher: './src/typescript/*.ts',
     csscombWatcher: './sass/*.scss',
@@ -23,6 +18,12 @@ const path = {
 // All posibility : https://github.com/sass/node-sass#options
 const libSass = {
     includePaths: [],
+}
+
+const template = {
+    injectData: true,
+    dataFormat: 'yaml',
+    dataFile: 'templates/data.yml',
 }
 
 const general = {
@@ -48,4 +49,4 @@ const env = {
     mode: 'dev'
 }
 
-export default {path, env, browsers, general, libSass}
+export default {path, env, browsers, general, libSass, template}

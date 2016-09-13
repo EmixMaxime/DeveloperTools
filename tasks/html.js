@@ -18,10 +18,10 @@ const stopLog = function (etat, name) {
 gulp.task('pug', () => {
     return gulp.src(config.path.pugWatcher)
         .pipe($.data( () => {
-            if (config.path.injectData === true && config.path.dataFormat === 'yaml') {
-                startLog('HTML:BUILD', 'Injecting data from ', config.path.dataFile)
+            if (config.template.injectData === true && config.template.dataFormat === 'yaml') {
+                startLog('HTML:BUILD', 'Injecting data from ', config.template.dataFile)
                 try {
-                    const content = fs.readFileSync(config.path.dataFile, 'utf8')
+                    const content = fs.readFileSync(config.template.dataFile, 'utf8')
                     return yaml.load(content)
                 } catch (err) {
                     console.log(err)
