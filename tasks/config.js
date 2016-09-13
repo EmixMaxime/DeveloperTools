@@ -15,6 +15,9 @@ const path = {
     data: 'templates/',
 
     typescriptWatcher: './src/typescript/*.ts',
+    csscombWatcher: './sass/*.scss',
+    cssComb: './sass/',
+    
 }
 
 // All posibility : https://github.com/sass/node-sass#options
@@ -28,6 +31,7 @@ const general = {
         scss: true,
         jsEs6: true,
         pug: true,
+        csscomb: true,
     },
     forceReload: [
         './public/index.html',
