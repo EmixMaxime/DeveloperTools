@@ -23,7 +23,6 @@
     "babelify": "^7.3.0",
     "browser-sync": "^2.13.0",
     "browserify": "^13.0.1",
-    "bs-html-injector": "^3.0.3",
     "csscomb": "^3.1.7",
     "eslint-config-standard": "^6.0.0",
     "eslint-friendly-formatter": "^2.0.6",
