@@ -1,4 +1,10 @@
 import cleanCSS from 'gulp-clean-css'
+import postcss from 'gulp-postcss'
+import cssmqpacker from 'css-mqpacker'
+
+const processors = [
+    cssmqpacker()
+]
 
 gulp.task('minify-css', () => {
     return gulp.src(config.path.sassOutDir +'*.css')
@@ -20,6 +26,7 @@ gulp.task('css-comb', () => {
 gulp.task('sass', () => {
     return gulp.src(config.path.scssWatcher)
         .pipe($.sass(config.libSass).on('error', $.sass.logError))
+        .pipe(postcss(processors))
         .pipe( $.if(config.env.mode == 'deployment', $.autoprefixer(config.browsers)) )
         .pipe(gulp.dest(config.path.cssOutDir))
         .pipe(browserSync.stream()) // !!!!!!

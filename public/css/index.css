@@ -1,3 +1,13 @@
-body {
-  background-color: black;
-  color: #fff; }
+.foo::before {
+  content: "foo on small"; }
+
+.bar::before {
+  content: "bar on small"; }
+
+@media screen and (min-width: 769px) {
+
+  .foo::before {
+    content: "foo on medium"; }
+
+  .bar::before {
+    content: "bar on medium"; } }
