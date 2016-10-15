@@ -35,7 +35,7 @@ const general = {
         csscomb: true,
     },
     forceReload: [
-        './public/index.html',
+        // './public/index.html',
     ],
 }
 
