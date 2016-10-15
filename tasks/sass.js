@@ -7,7 +7,7 @@ const processors = [
 ]
 
 gulp.task('minify-css', () => {
-    return gulp.src(config.path.sassOutDir +'*.css')
+    return gulp.src(config.path.cssOutDir +'*.css')
         .pipe(cleanCSS({debug: true}, function(details) {
             /* https://github.com/jakubpawlowicz/clean-css#how-to-use-clean-css-api */
             console.log(details.name + ': ' + details.stats.originalSize)
@@ -26,8 +26,12 @@ gulp.task('css-comb', () => {
 gulp.task('sass', () => {
     return gulp.src(config.path.scssWatcher)
         .pipe($.sass(config.libSass).on('error', $.sass.logError))
-        .pipe(postcss(processors))
-        .pipe( $.if(config.env.mode == 'deployment', $.autoprefixer(config.browsers)) )
+        .pipe(
+            $.if(process.env.NODE_ENV == 'production', postcss(processors))
+        )
+        .pipe(
+            $.if(process.env.NODE_ENV == 'production', $.autoprefixer(config.browsers))
+        )
         .pipe(gulp.dest(config.path.cssOutDir))
         .pipe(browserSync.stream()) // !!!!!!
 })

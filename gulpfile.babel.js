@@ -18,7 +18,7 @@ global.browserSync = browserSync
 import requireDir from 'require-dir'
 requireDir('./tasks') // Require all of files into the folder
 
-gulp.task('dev', ['browser-sync'], function () {
+const lauchTask = () => {
     for (let loader in config.general.activeLoaders) {
         if (config.general.activeLoaders[loader] === true) {
             log.time('GULP')
@@ -29,8 +29,25 @@ gulp.task('dev', ['browser-sync'], function () {
             gulp.watch(config.path[loader + 'Watcher'], [taskNameForLoader[loader]])
         }
     }
+}
+
+gulp.task('dev', ['browser-sync'], function () {
+    lauchTask()
 })
 
-gulp.task('build', ['javascript:build'], () => {
-    
+const getLoadersForProduction = function () {
+    const loaders = []
+    for (let loader in config.general.activeLoaders) {
+        if (config.general.activeLoaders[loader] === true) {
+            loaders.push(taskNameForLoader[loader])
+        }
+    }
+    return loaders
+}
+
+gulp.task('build', getLoadersForProduction(), () => {
+    console.log('The env :', process.env.NODE_ENV)
+    const loaders = getLoadersForProduction()
+    loaders.push('minify-css')
+    console.log(loaders)
 })

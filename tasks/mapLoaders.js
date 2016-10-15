@@ -1,9 +1,10 @@
 const taskNameForLoader = {
 	typescript: 'typescript:watch', // Pour le loader 'typescript' j'utilise la tache gulp ...
-	jsEs6: 'javascript:watch',
 	scss: 'sass',
-	jade: 'html',
+	pug: 'pug',
 	csscomb: 'css-comb'
 }
+
+taskNameForLoader.jsEs6 = process.env.NODE_ENV == 'prodution' ? 'javascript:watch' : 'javascript:build'
 
 export default taskNameForLoader

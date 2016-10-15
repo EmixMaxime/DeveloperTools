@@ -44,9 +44,4 @@ const browsers = [
     'last 2 versions'
 ]
 
-
-const env = {
-    mode: 'dev'
-}
-
-export default {path, env, browsers, general, libSass, template}
+export default {path, browsers, general, libSass, template}

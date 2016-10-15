@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "gulp dev",
-    "build": "gulp build"
+    "dev": "NODE_ENV='developement' gulp dev",
+    "build": "NODE_ENV='production' gulp build"
   },
   "author": "EmixMaxime <emixmaxime@outlook.fr>",
   "license": "MIT",
@@ -39,6 +39,7 @@
     "gulp-load-plugins": "^1.2.4",
     "gulp-postcss": "^6.2.0",
     "gulp-sass": "^2.3.2",
+    "gulp-uglify": "^2.0.0",
     "gutil-waterlog": "^1.0.0",
     "js-yaml": "^3.6.1",
     "pug": "^2.0.0-beta3",
