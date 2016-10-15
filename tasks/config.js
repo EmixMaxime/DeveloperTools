@@ -3,6 +3,13 @@ const path = {
     cssOutDir: './public/css/',
     scssWatcher: './sass/**/*.scss',
 
+    jsOutDir: './public/js/',
+    jsEs6Watcher: './src/es6/*.js',
+
+    htmlOutDir : 'public/',
+    pugWatcher: './templates/**/*.pug',
+
+    typescriptWatcher: './src/typescript/*.ts',
     csscombWatcher: './sass/*.scss',
     cssComb: './sass/',
     
