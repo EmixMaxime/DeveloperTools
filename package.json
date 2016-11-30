@@ -44,7 +44,6 @@
     "gutil-waterlog": "^1.0.0",
     "js-yaml": "^3.6.1",
     "pug": "^2.0.0-beta3",
-    "require-dir": "^0.3.0",
     "tsify": "^0.16.0",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"
