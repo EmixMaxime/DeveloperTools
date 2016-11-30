@@ -1,6 +1,6 @@
 const taskNameForLoader = {
 	typescript: 'typescript:watch', // Pour le loader 'typescript' j'utilise la tache gulp ...
-	scss: 'sass',
+	sass: 'sass',
 	pug: 'pug',
 	csscomb: 'css-comb'
 }

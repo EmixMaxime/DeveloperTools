@@ -11,9 +11,9 @@ const serverOptions = { // List of interesting options
     // host: '192.168.1.30' // Is optional, but it fixed bug on my raspberryPi
 }
 
-browserSync.use(require("bs-html-injector"), {
-    files: [serverOptions.server + '/*.html']
-})
+// browserSync.use(require("bs-html-injector"), {
+//     files: [serverOptions.server + '/*.html']
+// })
 
 /* https://www.browsersync.io/docs/gulp#gulp-sass-css */
 
@@ -24,7 +24,7 @@ browserSync.use(require("bs-html-injector"), {
 /* https://www.browsersync.io/docs/options#option-ghostMode -> pour synchroniser avec les navigateurs, je scroll sur pc, ça scroll portable, click idem ect */
 gulp.task('browser-sync', ['sass'], function() {
     browserSync.init(serverOptions)
-    config.general.forceReload.forEach( item => {
+    config.browserSync.forceReload.forEach( item => {
         gulp.watch(item).on('change', browserSync.reload);
     })
 })

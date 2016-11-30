@@ -1,7 +1,7 @@
 // Configurations paths
 const path = {
     cssOutDir: './public/css/',
-    scssWatcher: './sass/**/*.scss',
+    scssWatcher: './sass/**/*.sass',
 
     jsOutDir: './public/js/',
     jsEs6Watcher: './src/es6/*.js',
@@ -10,9 +10,8 @@ const path = {
     pugWatcher: './templates/**/*.pug',
 
     typescriptWatcher: './src/typescript/*.ts',
-    csscombWatcher: './sass/*.scss',
-    cssComb: './sass/',
-    
+    csscombWatcher: './sass/*.sass',
+    cssComb: './sass/'
 }
 
 // All posibility : https://github.com/sass/node-sass#options
@@ -21,19 +20,17 @@ const libSass = {
 }
 
 const template = {
-    injectData: true,
-    dataFormat: 'yaml',
-    dataFile: 'templates/data.yml',
 }
 
-const general = {
-    activeLoaders: {
-        typescript: false,
-        scss: true,
-        jsEs6: true,
-        pug: true,
-        csscomb: true,
-    },
+const loaders = {
+    typescript: false,
+    sass: true,
+    jsEs6: false,
+    pug: false,
+// csscomb: true,
+}
+
+const browserSync = {
     forceReload: [
         // './public/index.html',
     ],
@@ -44,4 +41,4 @@ const browsers = [
     'last 2 versions'
 ]
 
-export default {path, browsers, general, libSass, template}
+export default {path, browsers, loaders, libSass, template, browserSync}
