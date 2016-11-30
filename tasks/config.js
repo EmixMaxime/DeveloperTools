@@ -30,10 +30,19 @@ const loaders = {
 // csscomb: true,
 }
 
-const browserSync = {
+export const browserSync = {
     forceReload: [
         // './public/index.html',
     ],
+    hotHtmlReloading: true,
+    serverOptions: { // List of interesting options
+        server: './public/',
+        logConnections: false, // Default : false
+        logFileChanges: true, // Default : true
+        reloadOnRestart: false, // Default : false
+        notify: true, // Default : false
+        // host: '192.168.1.30' // Is optional, but it fixed bug on my raspberryPi
+    }
 }
 
 // Autoprefixing css
