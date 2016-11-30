@@ -1,5 +1,5 @@
 // Configurations paths
-const path = {
+export const path = {
     cssOutDir: './public/css/',
     scssWatcher: './sass/**/*.sass',
 
@@ -19,14 +19,17 @@ const libSass = {
     includePaths: [],
 }
 
-const template = {
+export const template = {
+    injectData: true,
+    dataFormat: 'yaml',
+    dataFile: 'templates/data.yml'
 }
 
 const loaders = {
     typescript: false,
     sass: true,
     jsEs6: false,
-    pug: false,
+    pug: true,
 // csscomb: true,
 }
 

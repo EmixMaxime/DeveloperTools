@@ -1,8 +1,10 @@
 import jade from 'pug' // Pug is the new name of Jade
 import yaml from 'js-yaml'
 import fs from 'fs'
+import log from 'gutil-waterlog'
+import {path as pathConfig, template as templateConfig} from './config'
 
-let startLog = function (name, action, fileName) {
+let startLog = (name, action, fileName) => {
     log.time(name)
     log.start(name)
         .action(action)
@@ -10,23 +12,22 @@ let startLog = function (name, action, fileName) {
         .send()
 }
 
-const stopLog = function (etat, name) {
+const stopLog = (etat, name) => {
     log.error(name)
         .time(log.timeEnd(name))
 }
 
 gulp.task('pug', () => {
-    return gulp.src(config.path.pugWatcher)
+    return gulp.src(pathConfig.pugWatcher)
         .pipe($.data( () => {
-            if (config.template.injectData === true && config.template.dataFormat === 'yaml') {
-                startLog('HTML:BUILD', 'Injecting data from ', config.template.dataFile)
+            if (templateConfig.injectData === true && templateConfig.dataFormat === 'yaml') {
+                startLog('HTML:BUILD', 'Injecting data from ', templateConfig.dataFile)
                 try {
-                    const content = fs.readFileSync(config.template.dataFile, 'utf8')
+                    const content = fs.readFileSync(templateConfig.dataFile, 'utf8')
                     return yaml.load(content)
                 } catch (err) {
                     console.log(err)
                 }
-
                 // stopLog('error', 'HTML:BUILD') Ne fonctionne pas
             }
         }))
@@ -37,5 +38,5 @@ gulp.task('pug', () => {
         })).on('error', function (err) {
             log.error(err) // ne fonctionne pas, arrête le script
         })
-        .pipe(gulp.dest(config.path.htmlOutDir))
+        .pipe(gulp.dest(pathConfig.htmlOutDir))
 })
