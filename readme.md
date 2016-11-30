@@ -1,5 +1,5 @@
 # Front-end boilerplate with gulp qu'est-ce?
-## Le readme n'est pas totalement rédigé...
+## La documentation est en cours d'écriture
 
 Ce dépôt héberge ma configuration pour gérer le front-end moderne avec Gulp pour me faciliter la vie lors du démarrage d'un projet.
 
@@ -11,12 +11,14 @@ Il permet :
 - L'utilisation de pug (anciennement Jade) avec la possibilité d'injecter des données
 
 **Et surtout d'ajouter des tâches très rapidement et sans prise de tête grâce aux configurations.**
-# Comment ajouter un watcher avec sa tâche liée :
-- Ajouter : `name: true` dans config.general.activeLoaders
-- Ajouter : `nameWatcher: 'src/*.html` dans config.path
-Attention à la convention choisie, nameWatcher/name !
-Puis ajouter dans mapLoaders.js quel est la tâche à lancer :
-`name: 'name-task'`
+# Comment ajouter un watcher avec sa tâche liée
+- Ajouter : `name: true` dans config.loaders
+- Ajouter : `nameWatcher: 'src/*.html` dans config.path 
+- Ajouter dans mapLoaders.js quel est la tâche à lancer : `name: 'name-task'`
+<br />
+## Convention
+- nameWatcher/name
+- le name doit avoir un fichier .js dans /tasks.
 
 ## Le serveur de développement
 J'utilise ici [browsersync](https://www.browsersync.io/) pour sa rapidité et sa facilité. <br>
