@@ -1,11 +1,10 @@
-import postcss from 'gulp-postcss'
-
 import browserify from 'browserify';
 import babelify from 'babelify'
 import source from 'vinyl-source-stream'
 import buffer from 'vinyl-buffer'
 import eslint from 'gulp-eslint'
 import friendlyFormatter from 'eslint-friendly-formatter'
+import {path as pathConfig } from './config'
  
 gulp.task('javascript:build', ['javascript:lint'], function () {
   return browserify({
@@ -18,13 +17,13 @@ gulp.task('javascript:build', ['javascript:lint'], function () {
   .pipe(source('main.js'))
   .pipe(buffer()) // Explications: http://stackoverflow.com/questions/24992980/how-to-uglify-output-with-browserify-in-gulp
   .pipe(
-    $.if(process.env.NODE_ENV == 'production', $.uglify())
+  $.if(process.env.NODE_ENV == 'production', $.uglify())
   )
-  .pipe(gulp.dest(config.path.jsOutDir))
+  .pipe(gulp.dest(pathConfig.jsOutDir))
 })
 
 gulp.task('javascript:lint', function () {
-  return gulp.src(config.path.jsEs6Watcher)
+  return gulp.src(pathConfig.jsEs6Watcher)
     .pipe(eslint())
     .pipe(eslint.format(friendlyFormatter))
     .pipe(eslint.results (results => {
