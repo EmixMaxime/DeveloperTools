@@ -1,7 +1,7 @@
 // Configurations paths
 export const path = {
     cssOutDir: './public/css/',
-    scssWatcher: './src/sass/**/*.sass',
+    sassWatcher: './src/sass/*.+(scss|sass)',
 
     jsOutDir: './public/js/',
     jsEs6Watcher: './src/es6/*.js',
@@ -49,7 +49,7 @@ export const browserSync = {
 }
 
 // Autoprefixing css
-const browsers = [
+export const browsers = [
     'last 2 versions'
 ]
 
