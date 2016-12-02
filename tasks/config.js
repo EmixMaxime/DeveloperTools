@@ -1,7 +1,7 @@
 // Configurations paths
 export const path = {
     cssOutDir: './public/css/',
-    scssWatcher: './sass/**/*.sass',
+    scssWatcher: './src/sass/**/*.sass',
 
     jsOutDir: './public/js/',
     jsEs6Watcher: './src/es6/*.js',
@@ -11,7 +11,7 @@ export const path = {
 
     typescriptWatcher: './src/typescript/*.ts',
     csscombWatcher: './sass/*.sass',
-    cssComb: './sass/'
+    cssComb: './src/sass/'
 }
 
 // All posibility : https://github.com/sass/node-sass#options
