@@ -12,6 +12,14 @@ Il permet :
 
 **Et surtout d'ajouter des tâches très rapidement et sans prise de tête grâce aux configurations.**
 
+# Installation
+```
+git clone https://github.com/EmixMaxime/Front-end-boilerplate-with-gulp/edit/master/readme.md
+yarn install
+# or
+npm install
+```
+
 # Comment ajouter un watcher avec sa tâche liée
 - Ajouter : `name: true` dans config.loaders
 - Ajouter : `nameWatcher: 'src/*.html` dans config.path 
