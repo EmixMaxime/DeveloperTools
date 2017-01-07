@@ -27,7 +27,7 @@ npm install
 <br />
 ## Convention
 - nameWatcher/name
-- le name doit avoir un fichier .js dans /tasks.
+- le name doit avoir un fichier .js dans `build/tasks`.
 
 # Le serveur de développement
 J'utilise ici [browsersync](https://www.browsersync.io/) pour sa rapidité et sa facilité. <br>
@@ -41,7 +41,6 @@ Ici j'utilise [browserify](http://browserify.org/) pour gérer mes modules et ba
 ## Eslint
 Nous devons garder un code facil et propre à lire, pour cela j'ai ajouté eslint.
 Ici j'ai décidé de mettre ce [standard](http://standardjs.com/) car c'est celui que j'utilise.
-
 
 # Le transpiler sass -> css
 Utilisation de [libsass](http://sass-lang.com/libsass) qui est bien plus rapide que Compass.

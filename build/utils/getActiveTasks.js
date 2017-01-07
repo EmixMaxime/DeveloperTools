@@ -1,4 +1,4 @@
-import config from './config.js'
+import config from '../config/config'
 const loaders = config.loaders
 let activeLoaders = new Set()
 

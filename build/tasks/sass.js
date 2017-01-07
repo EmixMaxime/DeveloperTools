@@ -1,7 +1,7 @@
 import cleanCSS from 'gulp-clean-css'
 import postcss from 'gulp-postcss'
 import cssmqpacker from 'css-mqpacker'
-import { path as pathConfig, libSass as libSassConfig, browsers } from './config'
+import { path as pathConfig, libSass as libSassConfig, browsers } from '../config/config'
 
 const processors = [
     cssmqpacker()

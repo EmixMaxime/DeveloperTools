@@ -2,7 +2,7 @@ import jade from 'pug' // Pug is the new name of Jade
 import yaml from 'js-yaml'
 import fs from 'fs'
 import log from 'gutil-waterlog'
-import {path as pathConfig, template as templateConfig} from './config'
+import {path as pathConfig, template as templateConfig} from '../config/config'
 
 let startLog = (name, action, fileName) => {
     log.time(name)

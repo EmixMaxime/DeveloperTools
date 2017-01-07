@@ -3,7 +3,7 @@ import source from 'vinyl-source-stream'
 import buffer from 'vinyl-buffer'
 import tsify from 'tsify'
 import babelify from 'babelify'
-import { path as pathConfig } from './config'
+import { path as pathConfig } from '../config/config'
 // import ts from 'gulp-typescript'
 
 const tsConfig = require('../tsconfig.json') // Configuration file
